@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -36,7 +37,14 @@ import { environment } from '../environments/environment';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path:'book', component: BooksComponent},
+      {path:'department', component: DepartmentComponent},
+      {path:'employee', component: EmployeeComponent},
+      {path:'posts', component: PostsComponent},
+      {path:'order', component: OrderComponent}
+    ])
   ],
   providers: [
     // EmployeeService,
